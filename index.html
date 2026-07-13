@@ -207,6 +207,19 @@
             text-transform: uppercase;
         }
 
+        .hero-portada-img {
+            width: 100%;
+            height: auto;
+            max-width: 500px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .hero-portada-img:hover {
+            transform: scale(1.02);
+        }
+
         /* CATALOG SECTION */
         .catalog-container {
             max-width: 1200px;
@@ -718,15 +731,7 @@
             <p>Descubre suplementos nutricionales de la más alta calidad y productos de cuidado personal diseñados científicamente para impulsar tu rendimiento físico y bienestar diario.</p>
         </div>
         <div class="hero-image-container">
-            <div class="hero-card">
-                <span class="badge">Especialidad</span>
-                <h3 style="margin-top: 1rem;">Suplementación de Vanguardia</h3>
-                <p>Pureza garantizada en cada producto de nuestro catálogo seleccionado.</p>
-                <div style="display: flex; gap: 0.5rem; align-items: center; margin-top: 2rem;">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-                    <span style="font-weight: 600; font-size: 0.9rem;">Envíos en Santa Cruz</span>
-                </div>
-            </div>
+            <img src="images/portada.jpg" alt="Portada de Impulso Nutricional" class="hero-portada-img">
         </div>
     </main>
 
