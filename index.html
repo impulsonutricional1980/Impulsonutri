@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impulso Nutricional - Productos Nutricionales y Cuidado Personal</title>
+    <!-- Google Fonts para diseño moderno y limpio -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS RESET & VARIABLES */
+        :root {
+            --primary: #059669; /* Verde esmeralda para salud y bienestar */
+            --primary-dark: #047857;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gray-light: #f1f5f9;
+            --gray: #64748b;
+            --accent: #f59e0b;
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.08);
+            --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* HEADER & NAVBAR */
+        header {
+            background-color: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.05);
+            transition: var(--transition);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--dark);
+        }
+
+        .cart-icon-btn {
+            background: var(--gray-light);
+            border: none;
+            padding: 0.75rem;
+            border-radius: 50%;
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .cart-icon-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.05);
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--accent);
+            color: var(--dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                grid-template-columns: 1.2fr 0.8fr;
+                padding: 4rem 2rem;
+            }
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        @media (min-width: 768px) {
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+
+        .hero-image-container {
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-card {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            color: var(--white);
+            box-shadow: var(--shadow-lg);
+            width: 100%;
+            max-width: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
+        }
+
+        .hero-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-card p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-card .badge {
+            background: rgba(255,255,255,0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* CATALOG SECTION */
+        .catalog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .catalog-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .catalog-title h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .catalog-title p {
+            color: var(--gray);
+            font-size: 1.05rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        @media (min-width: 640px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .product-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            border: 1px solid rgba(15, 23, 42, 0.04);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .product-img-placeholder {
+            height: 200px;
+            background: linear-gradient(135deg, var(--gray-light), #e2e8f0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-img-placeholder svg {
+            width: 48px;
+            height: 48px;
+            color: var(--gray);
+            opacity: 0.5;
+        }
+
+        .product-category {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background-color: var(--white);
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1.25rem;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .product-price {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .add-to-cart-btn {
+            background-color: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.02);
+        }
+
+        /* SHOPPING CART DRAWER (SIDE MENU) */
+        .cart-drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .cart-drawer-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 440px;
+            height: 100%;
+            background-color: var(--white);
+            z-index: 1001;
+            box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+            transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-drawer.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .close-cart-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .close-cart-btn:hover {
+            background-color: var(--gray-light);
+            color: var(--dark);
+        }
+
+        .cart-items-container {
+            padding: 1.5rem;
+            overflow-y: auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        /* ESTADO DE CARRITO VACÍO */
+        .cart-empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--gray);
+            height: 100%;
+        }
+
+        .cart-empty-state svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        /* ELEMENTOS DEL CARRITO */
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid var(--gray-light);
+            align-items: center;
+        }
+
+        .cart-item-img {
+            width: 64px;
+            height: 64px;
+            border-radius: 8px;
+            background: var(--gray-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cart-item-img svg {
+            width: 24px;
+            height: 24px;
+            color: var(--gray);
+        }
+
+        .cart-item-details {
+            flex-grow: 1;
+        }
+
+        .cart-item-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item-price {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .cart-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .qty-btn {
+            background-color: var(--gray-light);
+            border: none;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .qty-btn:hover {
+            background-color: #cbd5e1;
+        }
+
+        .qty-number {
+            font-size: 0.9rem;
+            font-weight: 700;
+            width: 20px;
+            text-align: center;
+        }
+
+        .remove-item-btn {
+            background: none;
+            border: none;
+            color: #ef4444;
+            cursor: pointer;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.25rem;
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .remove-item-btn:hover {
+            background-color: #fee2e2;
+        }
+
+        /* RESUMEN DE COMPRA */
+        .cart-footer {
+            padding: 1.5rem;
+            border-top: 1px solid var(--gray-light);
+            background-color: var(--white);
+        }
+
+        .cart-total-row {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+
+        .checkout-btn {
+            width: 100%;
+            background-color: #25d366; /* Color de WhatsApp */
+            color: var(--white);
+            border: none;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            transition: var(--transition);
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+        }
+
+        .checkout-btn:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.3);
+        }
+
+        /* UBICACIÓN & FOOTER */
+        .location-section {
+            background-color: var(--white);
+            border-top: 1px solid rgba(15, 23, 42, 0.05);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .location-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .location-icon {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .location-container h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-container p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .location-address {
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        footer {
+            background-color: var(--dark);
+            color: #94a3b8;
+            padding: 3rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: var(--white);
+        }
+
+        /* BOTÓN FLOTANTE ONLINE DE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            background-color: #25d366;
+            color: var(--white);
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.05) translateY(-2px);
+            background-color: #20ba5a;
+        }
+
+        .whatsapp-float svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Badge dinámico de estado en línea */
+        .online-badge {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.75rem;
+            background: rgba(255, 255, 255, 0.25);
+            padding: 0.2rem 0.5rem;
+            border-radius: 50px;
+        }
+
+        .online-dot {
+            width: 8px;
+            height: 8px;
+            background-color: var(--white);
+            border-radius: 50%;
+            display: inline-block;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.9); opacity: 0.9; }
+            50% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(0.9); opacity: 0.9; }
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-float span {
+                display: none;
+            }
+            .whatsapp-float {
+                padding: 0.75rem;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                <span>Impulso<strong>Nutricional</strong></span>
+            </a>
+            <button class="cart-icon-btn" id="open-cart-btn" aria-label="Abrir Carrito">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                <span class="cart-badge" id="cart-badge-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Lleva tu cuerpo y salud al <span>siguiente nivel</span></h1>
+            <p>Descubre suplementos nutricionales de la más alta calidad y productos de cuidado personal diseñados científicamente para impulsar tu rendimiento físico y bienestar diario.</p>
+        </div>
+        <div class="hero-image-container">
+            <div class="hero-card">
+                <span class="badge">Especialidad</span>
+                <h3 style="margin-top: 1rem;">Suplementación de Vanguardia</h3>
+                <p>Pureza garantizada en cada producto de nuestro catálogo seleccionado.</p>
+                <div style="display: flex; gap: 0.5rem; align-items: center; margin-top: 2rem;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <span style="font-weight: 600; font-size: 0.9rem;">Envíos en Santa Cruz</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- CATALOG SECTION -->
+    <section class="catalog-container">
+        <div class="catalog-title">
+            <h2>Catálogo Especializado</h2>
+            <p>Selecciona los mejores productos de cuidado personal y nutrición y arma tu pedido</p>
+        </div>
+        
+        <div class="products-grid" id="products-grid">
+            <!-- Los productos se inyectan dinámicamente con JavaScript -->
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section class="location-section">
+        <div class="location-container">
+            <div class="location-icon">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3>Punto de Entrega</h3>
+            <p>Visítanos o coordina tu envío a domicilio</p>
+            <p class="location-address">Calle Wilson Ruiz # 18 • Santa Cruz de la Sierra, Bolivia</p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 <strong>Impulso Nutricional</strong>. Todos los derechos reservados.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; opacity: 0.7;">Desarrollado para optimización de conversiones y venta directa.</p>
+    </footer>
+
+    <!-- SHOPPING CART DRAWER -->
+    <div class="cart-drawer-overlay" id="cart-overlay"></div>
+    <div class="cart-drawer" id="cart-drawer">
+        <div class="cart-header">
+            <h3>Tu Carrito de Compras</h3>
+            <button class="close-cart-btn" id="close-cart-btn">&times;</button>
+        </div>
+        <div class="cart-items-container" id="cart-items-container">
+            <!-- Items de carrito se renderizan dinámicamente -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total:</span>
+                <span id="cart-total-amount">0.00 Bs</span>
+            </div>
+            <button class="checkout-btn" id="checkout-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+                Finalizar Pedido por WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://wa.me/59160400931?text=Hola%20Impulso%20Nutricional!%20Me%20gustaría%20saber%20más%20sobre%20sus%20productos." class="whatsapp-float" target="_blank" id="float-whatsapp-link">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span>Chatea con nosotros</span>
+        <div class="online-badge">
+            <span class="online-dot"></span>
+            Online
+        </div>
+    </a>
+
+    <!-- LÓGICA DE JAVASCRIPT VANILLA -->
+    <script>
+        // CONFIGURACIÓN DE NEGOCIO Y PRODUCTOS
+        const WHATSAPP_PHONE = "59160400931";
+        const PRODUCTS_DATA = [
+            { id: 1, name: "Creatina monohidrato", price: 150, category: "Nutrición", desc: "Aumenta tu fuerza, potencia muscular y acelera la recuperación." },
+            { id: 2, name: "Omega 3 cápsulas", price: 145, category: "Nutrición", desc: "Ácidos grasos esenciales para apoyar tu salud cardiovascular y cognitiva." },
+            { id: 3, name: "Complejo B cápsulas", price: 150, category: "Nutrición", desc: "Optimiza la conversión de alimentos en energía y apoya el sistema nervioso." },
+            { id: 4, name: "Vitamina C crema", price: 125, category: "Cuidado Personal", desc: "Potente antioxidante que ilumina, unifica el tono de piel y estimula colágeno." },
+            { id: 5, name: "Retinol serum", price: 125, category: "Cuidado Personal", desc: "Renovador celular de noche para suavizar líneas de expresión y texturas." }
+        ];
+
+        // ESTADO DE LA APLICACIÓN
+        let cart = [];
+
+        // SELECTORES DOM
+        const productsGrid = document.getElementById("products-grid");
+        const cartOverlay = document.getElementById("cart-overlay");
+        const cartDrawer = document.getElementById("cart-drawer");
+        const openCartBtn = document.getElementById("open-cart-btn");
+        const closeCartBtn = document.getElementById("close-cart-btn");
+        const cartItemsContainer = document.getElementById("cart-items-container");
+        const cartTotalAmount = document.getElementById("cart-total-amount");
+        const cartBadgeCount = document.getElementById("cart-badge-count");
+        const checkoutBtn = document.getElementById("checkout-btn");
+
+        // INICIALIZACIÓN
+        function init() {
+            renderProducts();
+            loadCartFromStorage();
+            setupEventListeners();
+            updateCartUI();
+        }
+
+        // CONTROLADORES DE EVENTOS
+        function setupEventListeners() {
+            // Abrir y cerrar el menú lateral del carrito
+            openCartBtn.addEventListener("click", () => toggleCart(true));
+            closeCartBtn.addEventListener("click", () => toggleCart(false));
+            cartOverlay.addEventListener("click", () => toggleCart(false));
+
+            // Finalizar pedido
+            checkoutBtn.addEventListener("click", sendOrderToWhatsApp);
+        }
+
+        function toggleCart(isOpen) {
+            if (isOpen) {
+                cartDrawer.classList.add("active");
+                cartOverlay.classList.add("active");
+            } else {
+                cartDrawer.classList.remove("active");
+                cartOverlay.classList.remove("active");
+            }
+        }
+
+        // RENDERIZAR CATÁLOGO DE PRODUCTOS
+        function renderProducts() {
+            productsGrid.innerHTML = PRODUCTS_DATA.map(product => `
+                <div class="product-card">
+                    <div class="product-img-placeholder">
+                        <span class="product-category">${product.category}</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">${product.name}</h3>
+                        <p class="product-description">${product.desc}</p>
+                        <div class="product-footer">
+                            <span class="product-price">${product.price} Bs</span>
+                            <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                                Agregar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // FUNCIONALIDADES DEL CARRITO
+        window.addToCart = function(productId) {
+            const product = PRODUCTS_DATA.find(p => p.id === productId);
+            if (!product) return;
+
+            const existingItem = cart.find(item => item.id === productId);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            saveCartToStorage();
+            updateCartUI();
+            toggleCart(true); // Desplegar automáticamente el carrito para incentivar la compra
+        };
+
+        function changeQty(productId, delta) {
+            const item = cart.find(item => item.id === productId);
+            if (!item) return;
+
+            item.qty += delta;
+            if (item.qty <= 0) {
+                removeFromCart(productId);
+            } else {
+                saveCartToStorage();
+                updateCartUI();
+            }
+        }
+
+        window.incrementQty = function(id) { changeQty(id, 1); };
+        window.decrementQty = function(id) { changeQty(id, -1); };
+
+        window.removeFromCart = function(productId) {
+            cart = cart.filter(item => item.id !== productId);
+            saveCartToStorage();
+            updateCartUI();
+        };
+
+        // ACTUALIZAR INTERFAZ GRÁFICA DEL CARRITO
+        function updateCartUI() {
+            // Actualizar número en el Navbar Badge
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            cartBadgeCount.textContent = totalQty;
+
+            // Renderizar items o estado vacío
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = `
+                    <div class="cart-empty-state">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                        <p>Tu carrito está vacío</p>
+                        <p style="font-size: 0.85rem; margin-top: 0.25rem;">¡Agrega algunos productos para iniciar tu pedido!</p>
+                    </div>
+                `;
+                checkoutBtn.disabled = true;
+                checkoutBtn.style.opacity = "0.5";
+                checkoutBtn.style.cursor = "not-allowed";
+            } else {
+                cartItemsContainer.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="cart-item-img">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-title">${item.name}</div>
+                            <div class="cart-item-price">${item.price} Bs</div>
+                            <div class="cart-item-actions">
+                                <button class="qty-btn" onclick="decrementQty(${item.id})">-</button>
+                                <span class="qty-number">${item.qty}</span>
+                                <button class="qty-btn" onclick="incrementQty(${item.id})">+</button>
+                            </div>
+                        </div>
+                        <button class="remove-item-btn" onclick="removeFromCart(${item.id})" aria-label="Eliminar item">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                        </button>
+                    </div>
+                `).join('');
+                checkoutBtn.disabled = false;
+                checkoutBtn.style.opacity = "1";
+                checkoutBtn.style.cursor = "pointer";
+            }
+
+            // Calcular totales
+            const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            cartTotalAmount.textContent = `${totalAmount.toFixed(2)} Bs`;
+        }
+
+        // ALMACENAMIENTO LOCAL CON WEB STORAGE
+        function saveCartToStorage() {
+            localStorage.setItem("imp_nutr_cart", JSON.stringify(cart));
+        }
+
+        function loadCartFromStorage() {
+            const storedCart = localStorage.getItem("imp_nutr_cart");
+            if (storedCart) {
+                try {
+                    cart = JSON.parse(storedCart);
+                } catch (e) {
+                    cart = [];
+                }
+            }
+        }
+
+        // ENVIAR COMPRA DETALLADA A WHATSAPP
+        function sendOrderToWhatsApp() {
+            if (cart.length === 0) return;
+
+            const totalAmount = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            
+            // Construir mensaje estructurado
+            let message = `*NUEVO PEDIDO - IMPULSO NUTRICIONAL*\n`;
+            message += `--------------------------------------\n`;
+            
+            cart.forEach(item => {
+                const subtotal = item.price * item.qty;
+                message += `• *${item.name}* x${item.qty}\n`;
+                message += `  Subtotal: ${subtotal} Bs\n\n`;
+            });
+
+            message += `--------------------------------------\n`;
+            message += `*TOTAL A PAGAR:* ${totalAmount.toFixed(2)} Bs\n`;
+            message += `*Punto de Entrega:* Calle Wilson Ruiz # 18\n`;
+            message += `--------------------------------------\n`;
+            message += `Por favor, confírmame disponibilidad y método de pago. ¡Gracias!`;
+
+            // Codificar texto para URL
+            const urlEncodedText = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${WHATSAPP_PHONE}?text=${urlEncodedText}`;
+
+            // Abrir en ventana nueva
+            window.open(whatsappURL, "_blank");
+        }
+
+        // Iniciar ejecuciones
+        init();
+    </script>
+</body>
+</html>
